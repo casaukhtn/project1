@@ -32,7 +32,7 @@
 								
 								<div class="row">
 									<div class="col-md-6">
-										<button type="submit" class="btn btn-primary btn-block">Submit</button>
+										<button type="button" id="submit" class="btn btn-primary btn-block">Submit</button>
 									</div>
 									<div class="col-md-6">
 										<a href="#" class="btn btn-link">Forgot your password!</a>
@@ -47,8 +47,26 @@
 		</div>
 	</section>
 
-	<script src="//code.jquery.com/jquery.js"></script>
+	<script src="libs/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<script src="libs/js/app.js"></script>
+	<script type="text/javascript">
+
+		$('#submit').click(function(event) {
+			/* Act on the event */
+			var username = $('#username').val();
+			var password = $('#password').val();
+
+			$.post('index.php?c=login&a=checkaccount', {ln: ['username', 'password'], lv: [username, password]}, function(data, textStatus, xhr) {
+				json = $.parseJSON(data);
+				if (json.result == 1) {
+					alert("đăng nhập thành công");
+					window.location = "?page=find";
+				} else {
+					window.location = "";
+				}
+			});
+		});
+	</script>
 </body>
 </html>
