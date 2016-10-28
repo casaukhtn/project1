@@ -5,7 +5,7 @@
 	class controller 
 	{
 		public $parameters = array();
-		public $output = array("result"=>0, "data"=>array());
+		public $data = array();
 		function load($c, $a, $p) {
 
 			$ft_controller= $c."_controller";
@@ -24,8 +24,13 @@
 			if (!method_exists($controller_obj, $a)) {
 				die("Method không tồn tại");
 			}
+			$output = array("result"=>0, "data"=>array());
+
 			$controller_obj->parameters=$p;
-			$controller_obj->{$a}();
+			$output['result'] = $controller_obj->{$a}();
+			$output['data'] = $controller_obj->data;
+
+			echo json_encode($output);
 		}
 	}
 	
