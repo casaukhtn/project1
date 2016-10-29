@@ -27,6 +27,9 @@
 		.container {
 			padding-top: 100px;
 		}
+		#menu2 {
+			margin-top: 15px;
+		}
 	</style>
 </head>
 <body>
@@ -42,8 +45,16 @@
 					<div class="col-md-4">
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      					<p class="navbar-text navbar-right">
-	      						<button type="button" class="btn btn-default navbar-btn">Log in</button>
-	      						<button type="button" class="btn btn-default navbar-btn">Sign up</button>
+	      						<div class="dropdown">
+									<button class="btn btn-default dropdown-toggle" type="button" id="menu2" data-toggle="dropdown">User name
+	    								<span class="caret"></span>
+	    							</button>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="menu2">
+		      							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">My profile</a></li>
+									    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Settings</a></li>
+									    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Logout</a></li>
+									</ul>
+							</div>
 	      					</p>
 						</div>
 					</div>
