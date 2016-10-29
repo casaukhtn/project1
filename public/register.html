@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login Page</title>
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="libs/css/app.css">
+</head>
+<body>
+	<section id="main-register">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<div class="panel panel-main">
+						<div class="panel-heading">
+							<h4 class="text-center">REGISTER</h4>
+						</div>
+						
+						<div class="panel-body">
+							<form id="form-login" action="" method="POST" role="form">
+							
+								<div class="form-group">
+									<label for="username">Username: </label>
+									<input type="text" class="form-control" id="username" placeholder="type your username">
+								</div>
+								
+								<div class="form-group">
+									<label for="password">Password: </label>
+									<input type="password" class="form-control" id="password" placeholder="type your password">
+								</div>
+
+								<div class="form-group">
+									<div class="row">
+										<div class="col-md-6"> 
+											<label for="firstname">First Name* </label>
+											<input type="text" class="form-control" id="firstname" placeholder="type your first name">
+										</div>
+										<div class="col-md-6"> 
+											<label for="lastname">Last Name </label>
+											<input type="text" class="form-control" id="lastname" placeholder="type your last name">
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="firstname">Gender* </label>
+									<br>
+								    <label class="radio-inline">
+								      <input type="radio" checked="true" name="optradio">Female
+								    </label>
+								    <label class="radio-inline">
+								      <input type="radio" name="optradio">Male
+								    </label>									
+								</div>
+								
+								<button type="button" id="submit" class="btn btn-primary btn-block">Sign Up</button>
+								
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="libs/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="libs/js/app.js"></script>
+	<script type="text/javascript">
+
+		$('#submit').click(function(event) {
+			/* Act on the event */
+			var username = $('#username').val();
+			var password = $('#password').val();
+
+			$.post('index.php?c=login&a=checkaccount', {ln: ['username', 'password'], lv: [username, password]}, function(data, textStatus, xhr) {
+				json = $.parseJSON(data);
+				if (json.result == 1) {
+					alert("đăng nhập thành công");
+					window.location = "?page=find";
+				} else {
+					window.location = "";
+				}
+			});
+		});
+	</script>
+</body>
+</html>
