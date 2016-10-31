@@ -1,5 +1,6 @@
 body {
 	background-color: #34495e;
+	position: relative;
 }
 
 #main {
@@ -17,7 +18,8 @@ body {
 }
 
 .jumbotron {
-	background-color: #4CAF50;
+	background-color: "rgb(67, 205, 128)";
+	height: 500px;
 	color: #fff;
 }
 
@@ -76,4 +78,9 @@ a, a:link, a:visited, a:active {
 
 #myPage{
 	background-color: #4CAF50;
+}
+
+.panel-heading {
+	font-size: 20px;
+	color: blue;
 }

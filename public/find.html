@@ -30,22 +30,32 @@
 		    </div>
 		  </div>
 		</nav>
-	<div class="jumbotron text-center">
+	<div class="jumbotron text-center" style="background-color: rgb(67, 205, 128)">
 		<div class="container">
 		<h1>9FINDER</h1>
 			<i>Find the best places to eat, drink, shop, or visit in Ho Chi Minh City</i>
 			<form class="form-inline">
-			<input type="email" class="form-control" size="50" placeholder="I'm looking for..." required>
+			<input type="text" class="form-control" size="50" placeholder="I'm looking for..." required list="itemList">
+      <datalist id="itemList">
+        <option value="Top picks">
+        <option value="Trending">
+        <option value="Food">
+        <option value="Coffee">
+        <option value="Nightlife">
+        <option value="Fun">
+        <option value="Shopping">
+        <option value="Breakfast">
+    </datalist>
 			<input type="text" class="form-control" size="30" value="Ho Chi Minh City" ="I'm looking for..." required>
 			<button type="button" class="btn btn-danger">
 		      <span class="glyphicon glyphicon-search"></span> Search
 		    </button>
 			<div class="row" style="margin: 30px;">
 			    <a href="#" class="btn btn-info btn-lg">
-			      <span class="glyphicon glyphicon-print"></span> Food
+			      <span class="glyphicon glyphicon-cutlery"></span> Food
 			    </a>
 			    <a href="#" class="btn btn-info btn-lg">
-			      <span class="glyphicon glyphicon-print"></span> Coffee
+			      <span class="glyphicon glyphicon-tint"></span> Coffee
 			    </a>
 			    <a href="#" class="btn btn-info btn-lg">
 			      <span class="glyphicon glyphicon-glass"></span> Nightlife
@@ -62,4 +72,3 @@
 	</div>
 </body>
 </html>
-
