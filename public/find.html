@@ -1,74 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>9Finder</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="libs/css/app.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body id="myPage">
 
-	<nav class="navbar navbar-default navbar-fixed-top">
-		  <div class="container">
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-		      <a class="navbar-brand" href="#myPage">Logo</a>
-		    </div>
-		    <div class="collapse navbar-collapse" id="myNavbar">
-		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="/9finder/?page=login">LOGIN</a></li>
-		        <li><a href="/9finder/?page=register">REGISTER</a></li>
-		      </ul>
-		    </div>
-		  </div>
-		</nav>
-	<div class="jumbotron text-center" style="background-color: rgb(67, 205, 128)">
-		<div class="container">
-		<h1>9FINDER</h1>
-			<i>Find the best places to eat, drink, shop, or visit in Ho Chi Minh City</i>
-			<form class="form-inline">
-			<input type="text" class="form-control" size="50" placeholder="I'm looking for..." required list="itemList">
-      <datalist id="itemList">
-        <option value="Top picks">
-        <option value="Trending">
-        <option value="Food">
-        <option value="Coffee">
-        <option value="Nightlife">
-        <option value="Fun">
-        <option value="Shopping">
-        <option value="Breakfast">
-    </datalist>
-			<input type="text" class="form-control" size="30" value="Ho Chi Minh City" ="I'm looking for..." required>
-			<button type="button" class="btn btn-danger">
-		      <span class="glyphicon glyphicon-search"></span> Search
-		    </button>
-			<div class="row" style="margin: 30px;">
-			    <a href="#" class="btn btn-info btn-lg">
-			      <span class="glyphicon glyphicon-cutlery"></span> Food
-			    </a>
-			    <a href="#" class="btn btn-info btn-lg">
-			      <span class="glyphicon glyphicon-tint"></span> Coffee
-			    </a>
-			    <a href="#" class="btn btn-info btn-lg">
-			      <span class="glyphicon glyphicon-glass"></span> Nightlife
-			    </a>
-			    <a href="#" class="btn btn-info btn-lg">
-			      <span class="glyphicon glyphicon-apple"></span> Fun
-			    </a>
-			    <a href="#" class="btn btn-info btn-lg">
-			      <span class="glyphicon glyphicon-shopping-cart"></span> Shopping
-			    </a>
-		    </div>
-		</form>
+<nav class="navbar navbar-default navbar-static-top navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3 col-md-offset-3">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#/">9Finder</a>
+			</div>
+			<div class="col-md-2 col-md-offset-3">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div>
+						<button type="button" class="btn btn-default"><a href="#/login">Login</a></button>
+						<button type="button" class="btn btn-default"><a href="#/register">Register</a></button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-</body>
-</html>
+</nav>
+
+<div class="container" id="main_find">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<h1>9FINDER</h1>
+			<p>Find the best places to eat, drink, shop, or visit in any city in the world. Access over 75 million short tips from local experts.</p>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle btn-block" type="button" id="menu1" data-toggle="dropdown">I'm looking for...
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Top picks</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Trending</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Food</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Coffee</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Nightlife</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Fun</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Shopping</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Breakfast</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
+				</div>
+				<div class="col-md-2">
+					<button type="button" class="btn btn-default" ng-click="search()">Search</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

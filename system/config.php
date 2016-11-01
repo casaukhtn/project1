@@ -1,7 +1,7 @@
 <?php
 	$PAGES = array();
 	// các trang của user
-	$PAGES['default'] = "find.html";
+	$PAGES['default'] = "index.html";
 	$PAGES['find'] = "find.html";
 	$PAGES['login'] = "login.html";
 	$PAGES['register'] = "register.html";
