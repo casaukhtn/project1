@@ -9,8 +9,11 @@
 			$token_id = create_uid(false);
 			$level = LEVEL_USER;
 			$password = md5($password);
+			$fullname = FULLNAME_USER_DEFAULT;
+			$email = "";
+			$avatar = IMG_USER_DEFAULT;
 
-			$sql = "INSERT INTO `account` (`token_id`, `username`, `password`, `level`) VALUES ('$token_id', '$username', '$password', '$level');";
+			$sql = "INSERT INTO `account` (`token_id`, `username`, `password`, `fullname`, `email`, `avatar`, `level`) VALUES ('$token_id', '$username', '$password', '$fullname', '$email', '$avatar', '$level');";
 			$this->setQuery($sql);
 			return $this->query();
 		}

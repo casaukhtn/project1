@@ -17,6 +17,7 @@
 				$arr = $model->get_account($username, $password);
 
 				if (is_array($arr) && count($arr) == 1) {
+					remember_current_account($arr[0]['token_id']);
 					$this->data['token_id'] = $arr[0]['token_id']; 
 					return 1;
 				}
@@ -36,6 +37,11 @@
 				}
 				return 0;
 			}
+		}
+
+		function logout() {
+			clear_account();
+			return 1;
 		}
 	}
  ?>

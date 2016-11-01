@@ -56,25 +56,12 @@
 			var username = $('#username').val();
 			var password = $('#password').val();
 
+			// kiểm tra sự tồn tại của account
 			$.post('index.php?c=login&a=checkaccount', {ln: ['username', 'password'], lv: [username, password]}, function(data, textStatus, xhr) {
 				json = $.parseJSON(data);
-				if (json.result == 1) {
-					alert("Đăng nhập thành công");
-					window.location = "?page=find";
-				} else {
-					window.location = "";
-				}
+				console.log(json);
 			});
 			
-			
-			// $.get('index.php?c=find&a=getlisttypeservice', function(data) {
-			// 	/*optional stuff to do after success */
-			// 	console.log(data);
-			// });
-
-			// $.post('index.php?c=find&a=getlistdatabytype', {ln: ['id_service_type'], lv: ['1']}, function(data, textStatus, xhr) {
-			// 	console.log(data);
-			// });
 		});
 	</script>
 </body>
