@@ -2,7 +2,7 @@ var myApp = angular.module('myApp', ['ngRoute']);
 myApp.config(function($routeProvider){
 	$routeProvider
 	.when('/', {
-		templateUrl: 'public/findResult.html'
+		templateUrl: 'public/find.html'
 	})
 	.when('/login', {
 		templateUrl: 'public/login.html'
