@@ -19,6 +19,10 @@ myApp.config(function($routeProvider){
 });
 
 myApp.controller('Abc', function($scope){
+	$.get('index.php?c=find&a=getlisttypeservice', function(data) {
+		json = $.parseJSON(data);
+		$scope.dsloaidv = json.data;
+	});
 	$scope.login = function(){
 		var username = $('#username').val();
 		var password = $('#password').val();
