@@ -30,21 +30,7 @@
 			<p>Find the best places to eat, drink, shop, or visit in any city in the world. Access over 75 million short tips from local experts.</p>
 			<div class="row">
 				<div class="col-md-6">
-					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle btn-block" type="button" id="menu1" data-toggle="dropdown">I'm looking for...
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Top picks</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Trending</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Food</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Coffee</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Nightlife</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Fun</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Shopping</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Breakfast</a></li>
-						</ul>
-					</div>
+					<select class="form-control ng-block" id="abc" ng-options="loaidv.name for loaidv in dsloaidv" ng-model="selectedState"></select>
 				</div>
 				<div class="col-md-4">
 					<input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
