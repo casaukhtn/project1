@@ -13,6 +13,9 @@ myApp.config(function($routeProvider){
 	.when('/register', {
 		templateUrl: 'public/register.html'
 	})
+	.when('/details', {
+		templateUrl: 'public/details.html'
+	})
 	.when('/search', {
 		templateUrl: 'public/findResult.html'
 	});

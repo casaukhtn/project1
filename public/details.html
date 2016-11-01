@@ -1,0 +1,208 @@
+
+<nav class="navbar navbar-defaul navbar-fixed-top" style="background-color: #4CAF50;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#/">Logo</a>
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+    </div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+    <div class="col-md-3">
+			<input type="text" class="form-control" size="30" placeholder="I'm looking for..." required list="itemList" style="margin: 10px;">
+			<datalist id="itemList">
+				<option value="Top picks">
+				<option value="Trending">
+				<option value="Food">
+				<option value="Coffee">
+				<option value="Nightlife">
+				<option value="Fun">
+				<option value="Shopping">
+				<option value="Breakfast">
+		</datalist>
+		</div>
+		<div class="col-md-3">
+			<div class="input-group">
+      <input type="text" class="form-control" value ="Ho Chi Minh City" required style="margin: 10px;">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+      </span>
+    </div>
+		</div>
+		<div class="col-md-3"></div>
+		<div class="col-md-2">
+			<img src='https://freeiconshop.com/files/edd/person-flat.png' style="width: 40px; height: auto; margin: 10px;"/>
+			<span style="font-size: 15px; color: white">
+				User name
+			</span>
+		</div>
+	</div>
+  </div>
+</nav>
+<div class="container" style="padding-top: 50px;">
+  <div class="row" style="margin-top: 30px;">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<body>
+  <div class="row">
+    <div class="panel panel-primary">
+     <div class="panel-heading">Pizza 4P's</div>
+     <div class="panel-body">
+       <div class="media">
+         <div class="media-left">
+           <img src="http://valaw.vn/data/images/lo-go-valaw.png" class="media-object" style="width:60px">
+         </div>
+         <div class="media-body">
+           <h4 class="media-heading">Find great places on the go.</h4>
+           <p>Discover what's nearby, search for what you're craving, and get deals and tips along the way.</p>
+         </div>
+       </div>
+     </div>
+   </div>
+  </div>
+<div class="row">
+  <div class="col-md-6" style="color: white">
+    <div class="w3-content w3-display-container" style="width: 600px;">
+      <img class="mySlides" src="http://www.w3schools.com/w3css/img_forest.jpg">
+      <img class="mySlides" src="http://www.w3schools.com/w3css/img_fjords.jpg">
+      <img class="mySlides" src="http://www.w3schools.com/w3css/img_lights.jpg">
+      <img class="mySlides" src="http://www.w3schools.com/w3css/img_mountains.jpg">
+
+      <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
+      <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
+    </div>
+  </div>
+  <div class="col-md-6" style="color: white;">
+    <div style="margin: 40px;">
+    <div class="media">
+      <div class="media-left">
+        <img src="https://ss3.4sqi.net/img/categories_v2/food/pizza_88.png" class="media-object" style="width:60px">
+      </div>
+      <div class="media-body">
+        <h2 class="media-heading">Pizza 4P's</h2>
+        <h3>Pizza Place$$$$.</h3>
+        <h3>Ho Chi Minh City</h3>
+        <button type="button" class="btn btn-default">
+           <span class="glyphicon glyphicon glyphicon-bookmark"></span> Save
+         </button>
+
+         <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-share"></span> Share
+          </button>
+          <h4>Rating <span class="label label-primary">9.4/10</span></h4>
+          <br>
+
+          <div class="rating" style="margin-top: 50px;">
+
+              <span><input type="radio" name="rating" id="str5" value="5"><label for="str5"></label></span>
+              <span><input type="radio" name="rating" id="str4" value="4"><label for="str4"></label></span>
+              <span><input type="radio" name="rating" id="str3" value="3"><label for="str3"></label></span>
+              <span><input type="radio" name="rating" id="str2" value="2"><label for="str2"></label></span>
+              <span><input type="radio" name="rating" id="str1" value="1"><label for="str1"></label></span>
+          </div>
+          <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+          <script type="text/javascript">
+          $(document).ready(function(){
+          //  Check Radio-box
+              $(".rating input:radio").attr("checked", false);
+              $('.rating input').click(function () {
+                  $(".rating span").removeClass('checked');
+                  $(this).parent().addClass('checked');
+              });
+
+              $('input:radio').change(
+              function(){
+                  var userRating = this.value;
+                  alert(userRating);
+              });
+          });
+          </script>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="container">
+  <h2>Dynamic Tabs</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Photos <span class="label label-primary">101</span></a></li>
+    <li><a data-toggle="tab" href="#menu1">Tips <span class="label label-primary">102</span</a></li>
+  </ul>
+
+  <div class="tab-content" style="margin: 30px;">
+    <div id="home" class="tab-pane fade in active">
+      <div class="responsive">
+    <div class="img">
+      <a target="_blank" href="http://www.w3schools.com/css/img_fjords.jpg">
+        <img src="http://www.w3schools.com/css/img_fjords.jpg" alt="Trolltunga Norway" width="300" height="200">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+  </div>
+
+
+  <div class="responsive">
+    <div class="img">
+      <a target="_blank" href="http://www.w3schools.com/css/img_forest.jpg">
+        <img src="http://www.w3schools.com/css/img_forest.jpg" alt="Forest" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="img">
+      <a target="_blank" href="#">
+        <img src="http://www.w3schools.com/css/img_lights.jpg" alt="Northern Lights" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="img">
+      <a target="_blank" href="img_mountains.jpg">
+        <img src="http://www.w3schools.com/css/img_mountains.jpg" alt="Mountains" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+  </div>
+
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+</script>
+  </div>
+</div>
