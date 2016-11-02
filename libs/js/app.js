@@ -13,12 +13,19 @@ myApp.config(function($routeProvider){
 	.when('/register', {
 		templateUrl: 'public/register.html'
 	})
+	.when('/details', {
+		templateUrl: 'public/details.html'
+	})
 	.when('/search', {
 		templateUrl: 'public/findResult.html'
 	});
 });
 
 myApp.controller('Abc', function($scope){
+	$.get('index.php?c=find&a=getlisttypeservice', function(data) {
+		json = $.parseJSON(data);
+		$scope.dsloaidv = json.data;
+	});
 	$scope.login = function(){
 		var username = $('#username').val();
 		var password = $('#password').val();
@@ -39,4 +46,8 @@ myApp.controller('Abc', function($scope){
 	$scope.search = function(){
 		window.location.hash = "#/search";
 	};
+<<<<<<< HEAD
 	});
+=======
+});
+>>>>>>> d10ddfbf9b3ceb869dbcdd41aaa34c1f7a399bce
