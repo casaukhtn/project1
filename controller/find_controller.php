@@ -14,7 +14,7 @@
 				$this->data = $arr; 
 				return 1;
 			}
-
+			return 0;
 		}
 
 		function getlistdatabytype() {
@@ -29,6 +29,8 @@
 					return 1;
 				}
 			} 
+			return 0;
+			
 		}
 	}
  ?>

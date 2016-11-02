@@ -35,8 +35,8 @@
 				if ($model->insert($username, $password)) {
 					return 1;
 				}
-				return 0;
 			}
+			return 0;
 		}
 
 		function logout() {
