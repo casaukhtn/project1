@@ -26,6 +26,7 @@ myApp.controller('Abc', function($scope){
 		json = $.parseJSON(data);
 		$scope.dsloaidv = json.data;
 	});
+
 	$scope.login = function(){
 		var username = $('#username').val();
 		var password = $('#password').val();
@@ -43,11 +44,25 @@ myApp.controller('Abc', function($scope){
 		});
 	};
 
+	$scope.register = function() {
+		var username = $('#register_username').val();
+		var password = $('#register_password').val();
+
+		$.post('index.php?c=login&a=register', {ln: ['username', 'password'], lv: [username, password]}, function(data, textStatus, xhr) {
+			json = $.parseJSON(data);
+			if (json.result == 1) {
+				alert("Đăng kí tài khoản thành công");
+				$scope.username = username;
+				window.location.hash = "";
+			} else {
+				alert("Đăng kí tài khoản thất bại");
+				window.location.hash = "";
+
+			}
+		});
+	}
+
 	$scope.search = function(){
 		window.location.hash = "#/search";
 	};
-<<<<<<< HEAD
-	});
-=======
 });
->>>>>>> d10ddfbf9b3ceb869dbcdd41aaa34c1f7a399bce
