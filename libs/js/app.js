@@ -46,8 +46,4 @@ myApp.controller('Abc', function($scope){
 	$scope.search = function(){
 		window.location.hash = "#/search";
 	};
-<<<<<<< HEAD
-	});
-=======
 });
->>>>>>> d10ddfbf9b3ceb869dbcdd41aaa34c1f7a399bce

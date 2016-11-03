@@ -129,30 +129,61 @@
 
 <div class="row">
   <div class="container">
-  <h2>Dynamic Tabs</h2>
+  <h2>About</h2>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Photos <span class="label label-primary">101</span></a></li>
-    <li><a data-toggle="tab" href="#menu1">Tips <span class="label label-primary">102</span</a></li>
+    <li class="active"><a data-toggle="tab" href="#details#home">Photos <span class="label label-primary">101</span></a></li>
+    <li><a data-toggle="tab" href="#details#menu1">Tips <span class="label label-primary">102</span</a></li>
   </ul>
 
   <div class="tab-content" style="margin: 30px;">
     <div id="home" class="tab-pane fade in active">
+      <div class="row" style="margin: 30px;">
+       <button class="btn btn-danger" type="button">
+          <span class="glyphicon glyphicon-camera"></span>
+        Add a photo here
+     </button>
+   </div>
       <div class="responsive">
     <div class="img">
-      <a target="_blank" href="http://www.w3schools.com/css/img_fjords.jpg">
+      <a data-toggle="modal" data-target="#imgModal">
         <img src="http://www.w3schools.com/css/img_fjords.jpg" alt="Trolltunga Norway" width="300" height="200">
       </a>
-      <div class="desc">Add a description of the image here</div>
+      <div class="desc" style="background-color: #0018A8; color: white;">Add a description of the image here</div>
     </div>
   </div>
+  <!-- Modal -->
+ <div class="modal fade" id="imgModal" role="dialog" style="top: 10%;">
+   <div class="modal-dialog">
 
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+       </div>
+       <div class="modal-body">
+        <img src="http://www.w3schools.com/css/img_fjords.jpg" alt="Trolltunga Norway" width="100%">
+       </div>
+
+       <div class="modal-footer">
+         <input type="text" class="modal-title form-control" value="Add a description of the image" style="margin-bottom: 10px;"></input>
+         <button type="button" class="btn btn-primary">
+            <span class="glyphicon glyphicon-floppy-save"></span> Save
+         </button>
+         <button type="button" class="btn btn-danger">
+           <span class="glyphicon glyphicon-remove"></span> Delete
+         </button>
+       </div>
+     </div>
+
+   </div>
+ </div>
 
   <div class="responsive">
     <div class="img">
       <a target="_blank" href="http://www.w3schools.com/css/img_forest.jpg">
         <img src="http://www.w3schools.com/css/img_forest.jpg" alt="Forest" width="600" height="400">
       </a>
-      <div class="desc">Add a description of the image here</div>
+      <div class="desc" style="background-color: #0018A8; color: white;">Add a description of the image here</div>
     </div>
   </div>
 
@@ -161,7 +192,7 @@
       <a target="_blank" href="#">
         <img src="http://www.w3schools.com/css/img_lights.jpg" alt="Northern Lights" width="600" height="400">
       </a>
-      <div class="desc">Add a description of the image here</div>
+      <div class="desc" style="background-color: #0018A8; color: white;">Add a description of the image here</div>
     </div>
   </div>
 
@@ -170,14 +201,150 @@
       <a target="_blank" href="img_mountains.jpg">
         <img src="http://www.w3schools.com/css/img_mountains.jpg" alt="Mountains" width="600" height="400">
       </a>
-      <div class="desc">Add a description of the image here</div>
+      <div class="desc" style="background-color: #0018A8; color: white;">Add a description of the image here</div>
     </div>
   </div>
 
     </div>
-    <div id="menu1" class="tab-pane fade">
-      <h3>Menu 1</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div id="menu1" class="tab-pane fade ">
+      <div class="panel panel-default" style="padding: 10px;">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="media">
+                <div class="media-left">
+                  <img src="http://www.w3schools.com/bootstrap/img_avatar1.png" class="media-object" style="width:60px">
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Left-aligned</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="media">
+                <div class="media-left">
+                  <img src="http://www.w3schools.com/bootstrap/img_avatar1.png" class="media-object" style="width:60px">
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Left-aligned</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>
+            </div>
+            </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="media">
+                <div class="media-left">
+                  <img src="http://www.w3schools.com/bootstrap/img_avatar1.png" class="media-object" style="width:60px">
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Left-aligned</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="media">
+                <div class="media-left">
+                  <img src="http://www.w3schools.com/bootstrap/img_avatar1.png" class="media-object" style="width:60px">
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Left-aligned</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-info">
+       <div class="panel-heading">
+         <div class="row">
+         <div class="col-md-6">
+         <span class="glyphicon glyphicon-tags"></span> 102 tips and reviews
+       </div>
+         <div class="col-md-6" >
+            <div class="right-inner-addon">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="search"
+                       class="form-control"
+                       placeholder="Search for tips" />
+            </div>
+          </div>
+          </div>
+       </div>
+       <div class="panel-body">Filter: <code>massage</code><code>spa</code><code>spacious</code><code>ms thuy</code><code>quiet</code><code>(12 more)</code></div>
+   </div>
+   <div class="panel panel-default" style="padding: 10px;">
+     <div class="media">
+          <div class="media-left">
+            <img src="https://freeiconshop.com/files/edd/person-flat.png" class="media-object" style="width:45px">
+          </div>
+          <div class="media-body">
+              <textarea class="form-control" rows="5" id="comment" placeholder="Leave a tip for others..."></textarea>
+              <input type="submit" class="btn btn-info" value="Post" style="margin-top: 10px;"></input>
+              <button type="button" class="btn btn-danger right" style="margin-top: 10px;"  data-toggle="tooltip" data-placement="bottom" title="Add a photo">
+                <span class="glyphicon glyphicon-camera"></span>
+              </button>
+              <script>
+                $(document).ready(function(){
+                    $('[data-toggle="tooltip"]').tooltip();
+                });
+              </script>
+          </div>
+        </div>
+   </div>
+
+   <div class="panel panel-default" style="padding: 10px;">
+
+     <div class="media">
+          <div class="media-left">
+            <img src="http://www.w3schools.com/bootstrap/img_avatar1.png" class="media-object" style="width:45px">
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">John Doe<small><i>Posted on February 19, 2016</i></small></h4>
+            <span class="glyphicon glyphicon-remove" style="float: right;"></span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+        <hr>
+        <div class="media">
+             <div class="media-left">
+               <img src="http://www.w3schools.com/bootstrap/img_avatar1.png" class="media-object" style="width:45px">
+             </div>
+             <div class="media-body">
+               <h4 class="media-heading">John Doe <small><i>Posted on February 19, 2016</i></small></h4>
+               <span class="glyphicon glyphicon-remove" style="float: right;"></span>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+             </div>
+           </div>
+           <hr>
+         <div class="media">
+              <div class="media-left">
+                <img src="http://www.w3schools.com/bootstrap/img_avatar1.png" class="media-object" style="width:45px">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">John Doe <small><i>Posted on February 19, 2016</i></small></h4>
+                <span class="glyphicon glyphicon-remove" style="float: right;"></span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+            </div>
+            <hr>
+          <div class="media">
+               <div class="media-left">
+                 <img src="http://www.w3schools.com/bootstrap/img_avatar1.png" class="media-object" style="width:45px">
+               </div>
+               <div class="media-body">
+                 <h4 class="media-heading">John Doe <small><i>Posted on February 19, 2016</i></small></h4>
+                 <span class="glyphicon glyphicon-remove" style="float: right;"></span>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+               </div>
+             </div>
+             <hr>
+   </div>
+  </div>
     </div>
 
     </div>
