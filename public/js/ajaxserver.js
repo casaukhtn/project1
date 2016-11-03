@@ -63,3 +63,40 @@ $.post('index.php?c=comment&a=delcomment', {ln: 'id_comment', lv: '1'}, function
 	json = $.parseJSON(data);
 	console.log(json);
 });
+
+// rating cá nhân cho một điểm
+$.post('index.php?c=rating&a=set_rating', {ln: ['service_code', 'score'], lv: ['1', '3']}, function(data, textStatus, xhr) {
+	json = $.parseJSON(data);
+	console.log(json);
+});
+
+// lấy rating cho 1 địa điểm
+$.get('index.php?c=rating&a=get_rating_medium&ln=service_code&lv=1', function(data, textStatus, xhr) {
+	json = $.parseJSON(data);
+	console.log(json);
+});
+
+// update website, price, phone của service. Chỉ admin mới sử dụng dc
+$.post('index.php?c=service&a=update_website', {ln: ['id_service', 'website'], lv: ['1', 'http://www.google.com']}, function(data, textStatus, xhr) {
+	json = $.parseJSON(data);
+	console.log(json);
+});
+$.post('index.php?c=service&a=update_price', {ln: ['id_service', 'price'], lv: ['1', '15.000']}, function(data, textStatus, xhr) {
+	json = $.parseJSON(data);
+	console.log(json);
+});
+$.post('index.php?c=service&a=update_phone', {ln: ['id_service', 'phone'], lv: ['1', '0909090909']}, function(data, textStatus, xhr) {
+	json = $.parseJSON(data);
+	console.log(json);
+});
+
+// thêm xóa sửa khuyến mãi
+$.post('index.php?c=promote&a=addpromote', {ln: ['service_code', 'describe'], lv: ['1', 'giảm giá 20% vào ngày 30.12']}, function(data, textStatus, xhr) {
+	json = $.parseJSON(data);
+	console.log(json);
+});
+
+$.get('index.php?c=promote&a=getnewpromote&ln=service_code&lv=1', function(data, textStatus, xhr) {
+	json = $.parseJSON(data);
+	console.log(json);
+});
