@@ -89,3 +89,14 @@ $.post('index.php?c=service&a=update_phone', {ln: ['id_service', 'phone'], lv: [
 	json = $.parseJSON(data);
 	console.log(json);
 });
+
+// thêm xóa sửa khuyến mãi
+$.post('index.php?c=promote&a=addpromote', {ln: ['service_code', 'describe'], lv: ['1', 'giảm giá 20% vào ngày 30.12']}, function(data, textStatus, xhr) {
+	json = $.parseJSON(data);
+	console.log(json);
+});
+
+$.get('index.php?c=promote&a=getnewpromote', function(data, textStatus, xhr) {
+	json = $.parseJSON(data);
+	console.log(json);
+});
