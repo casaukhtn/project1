@@ -75,3 +75,17 @@ $.get('index.php?c=rating&a=get_rating_medium&ln=service_code&lv=1', function(da
 	json = $.parseJSON(data);
 	console.log(json);
 });
+
+// update website, price, phone của service. Chỉ admin mới sử dụng dc
+$.post('index.php?c=service&a=update_website', {ln: ['id_service', 'website'], lv: ['1', 'http://www.google.com']}, function(data, textStatus, xhr) {
+	json = $.parseJSON(data);
+	console.log(json);
+});
+$.post('index.php?c=service&a=update_price', {ln: ['id_service', 'price'], lv: ['1', '15.000']}, function(data, textStatus, xhr) {
+	json = $.parseJSON(data);
+	console.log(json);
+});
+$.post('index.php?c=service&a=update_phone', {ln: ['id_service', 'phone'], lv: ['1', '0909090909']}, function(data, textStatus, xhr) {
+	json = $.parseJSON(data);
+	console.log(json);
+});

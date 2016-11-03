@@ -14,6 +14,12 @@
 			return $arr;
 		}
 
+		function update($id_service, $column_name, $value) {
+			$sql = "UPDATE service SET $column_name = '$value' WHERE id_service = '$id_service';";
+			$this->setQuery($sql);
+			return $this->query();
+		}
+
 		function get_data_service_by_type($type) {
 			$sql = "SELECT sv.id_service, svt.name type, pn.name, sv.house_number, st.name street, w.name ward, dt.name district, pv.name province, sv.website, sv.kinhdo, sv.vido, sv.remark
 				FROM service sv 

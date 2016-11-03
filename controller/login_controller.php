@@ -18,6 +18,8 @@
 
 				if (is_array($arr) && count($arr) == 1) {
 					remember_current_account($arr[0]['token_id']);
+					remember_current_account($arr[0]['level'], "level");
+
 					$this->data['token_id'] = $arr[0]['token_id']; 
 					return 1;
 				}
