@@ -65,8 +65,8 @@
    </div>
   </div>
 <div class="row">
-  <div class="col-md-6" style="color: white">
-    <div class="w3-content w3-display-container" style="width: 600px;">
+<div class="col-md-6" style="color: white">
+    <!--<div class="w3-content w3-display-container" style="width: 600px;">
       <img class="mySlides" src="http://www.w3schools.com/w3css/img_forest.jpg">
       <img class="mySlides" src="http://www.w3schools.com/w3css/img_fjords.jpg">
       <img class="mySlides" src="http://www.w3schools.com/w3css/img_lights.jpg">
@@ -74,8 +74,32 @@
 
       <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
       <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
-    </div>
+    </div>-->
+
+<div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides" src="https://irs1.4sqi.net/img/general/width960/138371741_mdop3CZroEP2r2DcfvobhpseRq25SWFuZomNWQ4wrcY.jpg" style="width:100%">
+  <img class="mySlides" src="https://irs2.4sqi.net/img/general/width960/138371741_O4zJVEv-d5OG7O3A4SU6d8wOz7k5ON6kK85-qgJBBbQ.jpg" style="width:100%">
+  <img class="mySlides" src="https://irs2.4sqi.net/img/general/width960/138371741_jC_1iu-cCKrOSGU0Qes_G1cZWJOssb-Ham2lOv1F710.jpg" style="width:100%">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
   </div>
+
   <div class="col-md-6" style="color: white;">
     <div style="margin: 40px;">
     <div class="media">
