@@ -63,3 +63,15 @@ $.post('index.php?c=comment&a=delcomment', {ln: 'id_comment', lv: '1'}, function
 	json = $.parseJSON(data);
 	console.log(json);
 });
+
+// rating cá nhân cho một điểm
+$.post('index.php?c=rating&a=set_rating', {ln: ['service_code', 'score'], lv: ['1', '3']}, function(data, textStatus, xhr) {
+	json = $.parseJSON(data);
+	console.log(json);
+});
+
+// lấy rating cho 1 địa điểm
+$.get('index.php?c=rating&a=get_rating_medium&ln=service_code&lv=1', function(data, textStatus, xhr) {
+	json = $.parseJSON(data);
+	console.log(json);
+});

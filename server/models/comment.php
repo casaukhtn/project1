@@ -5,10 +5,10 @@
 	*/
 	class comment extends database
 	{
-		function insert($service_code, $content) {
+		function insert($service_code, $content, $attached=0) {
 			if (current_account()) {
 				$comment_user = current_account();
-				$sql = "INSERT INTO `comment` (`id_comment`, `service_code`, `comment_user`, `content`) VALUES (NULL, '$service_code', '$comment_user', '$content');";
+				$sql = "INSERT INTO `comment` (`id_comment`, `service_code`, `comment_user`, `content`, `attached`) VALUES (NULL, '$service_code', '$comment_user', '$content', '$attached');";
 				$this->setQuery($sql);
 				return $this->query();
 			}
