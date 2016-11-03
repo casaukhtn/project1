@@ -96,7 +96,7 @@ $.post('index.php?c=promote&a=addpromote', {ln: ['service_code', 'describe'], lv
 	console.log(json);
 });
 
-$.get('index.php?c=promote&a=getnewpromote', function(data, textStatus, xhr) {
+$.get('index.php?c=promote&a=getnewpromote&ln=service_code&lv=1', function(data, textStatus, xhr) {
 	json = $.parseJSON(data);
 	console.log(json);
 });
