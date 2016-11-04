@@ -7,9 +7,6 @@ myApp.config(function($routeProvider){
 	.when('/login', {
 		templateUrl: 'public/login.html'
 	})
-	.when('/find_login', {
-		templateUrl: 'public/find_login.html'
-	})
 	.when('/register', {
 		templateUrl: 'public/register.html'
 	})
@@ -27,6 +24,16 @@ myApp.controller('Abc', function($scope){
 		$scope.dsloaidv = json.data;
 	});
 
+	$scope.loadaccount = function () {
+		var username = $.cookie("username");
+		var token = $.cookie("token");
+		if (username && token) {
+			$scope.account = {username:username, token: token};
+		}
+	};
+
+	$scope.loadaccount();
+
 	$scope.login = function(){
 		var username = $('#username').val();
 		var password = $('#password').val();
@@ -34,15 +41,24 @@ myApp.controller('Abc', function($scope){
 		$.post('index.php?c=login&a=checkaccount', {ln: ['username', 'password'], lv: [username, password]}, function(data, textStatus, xhr) {
 			json = $.parseJSON(data);
 			if (json.result == 1) {
-				alert("Đăng nhập thành công");
+				addAccountToCookie(username, json.data.token_id)
 				$scope.username = username;
-				window.location.hash = "#/find_login";
+				window.location = "";
 			} else {
 				alert("Username or Password incorrect");
-				window.location.hash = "#/login";
 			}
 		});
 	};
+
+	$scope.logout = function() {
+		$.get('index.php?c=login&a=logout', function(data, textStatus, xhr) {
+			json = $.parseJSON(data);
+			if (json.result == 1) {
+				removeAllCookie();
+				window.location = "";
+			}
+		});
+	}
 
 	$scope.register = function() {
 		var username = $('#register_username').val();
@@ -53,11 +69,9 @@ myApp.controller('Abc', function($scope){
 			if (json.result == 1) {
 				alert("Đăng kí tài khoản thành công");
 				$scope.username = username;
-				window.location.hash = "";
+				window.location = "";
 			} else {
 				alert("Đăng kí tài khoản thất bại");
-				window.location.hash = "";
-
 			}
 		});
 	}

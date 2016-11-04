@@ -166,3 +166,7 @@ div.desc {
     display: table;
     clear: both;
 }
+
+.navbar li a, .navbar .navbar-brand {
+    color:  black !important;
+}

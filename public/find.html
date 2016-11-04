@@ -1,22 +1,49 @@
 
-<nav class="navbar navbar-default navbar-fixed-top">
-		  <div class="container">
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-		      <a class="navbar-brand" href="#/">Logo</a>
-		    </div>
-		    <div class="collapse navbar-collapse" id="myNavbar">
-		      <ul class="nav navbar-nav navbar-right">
-		        <li><a data-toggle="modal" data-target="#myModalLogin">LOGIN</a></li>
-		        <li><a data-toggle="modal" data-target="#myModalRegister">REGISTER</a></li>
-		      </ul>
-		    </div>
-		  </div>
-		</nav>
+<nav class="navbar navbar-default navbar-static-top navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3 col-md-offset-3">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">9Finder</a>
+			</div>
+			<div class="col-md-2 col-md-offset-3">
+				<!-- đã login -->
+		   		<div ng-if="account">
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<div class="dropdown">
+							<button class="btn btn-default dropdown-toggle btn-block" type="button" id="menu1" data-toggle="dropdown">
+								{{account.username}}
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">User profile</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Settings</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" ng-click="logout()">Logout</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- chưa login -->
+				<div ng-if = "!account">
+				    <div class="collapse navbar-collapse" id="myNavbar">
+				      <ul class="nav navbar-nav navbar-right">
+				        <li><a data-toggle="modal" data-target="#myModalLogin">LOGIN</a></li>
+				        <li><a data-toggle="modal" data-target="#myModalRegister">REGISTER</a></li>
+				      </ul>
+				    </div>
+			   	</div>
+
+			</div>
+		</div>
+	</div>
+</nav>
+
+
 	<div class="jumbotron text-center" style="background-color: rgb(67, 205, 128)">
 		<div class="container">
 		<h1>9FINDER</h1>
