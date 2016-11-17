@@ -9,7 +9,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">9Finder</a>
+				<a class="navbar-brand" href="#/">9Finder</a>
 			</div>
 			<div class="col-md-2 col-md-offset-3">
 				<!-- đã login -->
@@ -22,7 +22,7 @@
 							</button>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">User profile</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Settings</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#/settings">Settings</a></li>
 								<li role="presentation"><a role="menuitem" tabindex="-1" ng-click="logout()">Logout</a></li>
 							</ul>
 						</div>
@@ -49,17 +49,11 @@
 		<h1>9FINDER</h1>
 			<i>Find the best places to eat, drink, shop, or visit in Ho Chi Minh City</i>
 			<form class="form-inline">
-			<input type="text" class="form-control" size="50" placeholder="I'm looking for..." required list="itemList">
-      <datalist id="itemList">
-        <option value="Top picks">
-        <option value="Trending">
-        <option value="Food">
-        <option value="Coffee">
-        <option value="Nightlife">
-        <option value="Fun">
-        <option value="Shopping">
-        <option value="Breakfast">
-    </datalist>
+			<input type="text" id= "loaidv" class="form-control" size="50" placeholder="I'm looking for..." required list="itemList" >
+      		<datalist id="itemList">
+        		<option ng-repeat="loaidv in dsloaidv" value="{{loaidv.name}}">
+    		</datalist>
+    
 			<input type="text" class="form-control" size="30" value="Ho Chi Minh City" ="I'm looking for..." required>
 			<button type="button" class="btn btn-danger" ng-click="search()">
 		      <span class="glyphicon glyphicon-search"></span> Search

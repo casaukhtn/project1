@@ -1,5 +1,5 @@
 var myApp = angular.module('myApp', ['ngRoute']);
-myApp.config(function($routeProvider){
+myApp.config(function($routeProvider, $locationProvider){
 	$routeProvider
 	.when('/', {
 		templateUrl: 'public/find.html'
@@ -15,15 +15,20 @@ myApp.config(function($routeProvider){
 	})
 	.when('/search', {
 		templateUrl: 'public/findResult.html'
+	})
+	.when('/settings', {
+		templateUrl: 'public/setting_user.html'
 	});
 });
 
 myApp.controller('Abc', function($scope){
+	//load danh sach loai dich vu
 	$.get('index.php?c=find&a=getlisttypeservice', function(data) {
 		json = $.parseJSON(data);
 		$scope.dsloaidv = json.data;
 	});
 
+	//load account
 	$scope.loadaccount = function () {
 		var username = $.cookie("username");
 		var token = $.cookie("token");
@@ -34,6 +39,7 @@ myApp.controller('Abc', function($scope){
 
 	$scope.loadaccount();
 
+	//dang nhap
 	$scope.login = function(){
 		var username = $('#username').val();
 		var password = $('#password').val();
@@ -50,6 +56,7 @@ myApp.controller('Abc', function($scope){
 		});
 	};
 
+	//dang xuat
 	$scope.logout = function() {
 		$.get('index.php?c=login&a=logout', function(data, textStatus, xhr) {
 			json = $.parseJSON(data);
@@ -60,6 +67,7 @@ myApp.controller('Abc', function($scope){
 		});
 	}
 
+	//dang ky
 	$scope.register = function() {
 		var username = $('#register_username').val();
 		var password = $('#register_password').val();
@@ -76,6 +84,7 @@ myApp.controller('Abc', function($scope){
 		});
 	}
 
+	//tim kiem
 	$scope.search = function(){
 		window.location.hash = "#/search";
 	};
