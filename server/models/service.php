@@ -30,7 +30,6 @@
 				    INNER JOIN district dt on sv.district_code = dt.id_district
 				    INNER JOIN province pv on sv.province_code = pv.id_province
 				WHERE sv.service_code = '$type';";
-
 			$this->setQuery($sql);
 			$result = $this->query();
 			$arr = array();

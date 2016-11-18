@@ -46,9 +46,10 @@
 <div class="container" style="padding-top: 50px;">
   <div class="row" style="margin-top: 30px;">
 		<div class="col-md-6">
-
+		
+		<div ng-repeat="service in services">
 		<div class="panel panel-info">
-	    <div class="panel-heading"><a href="#/details">1. Prime Bistro</a></div>
+	    <div class="panel-heading"><a href="#/details">{{service.name}}</a></div>
 	    <div class="panel-body">
 				<div class="media">
 			 <div class="media-left">
@@ -56,7 +57,7 @@
 			 </div>
 			 <div class="media-body">
 				 <p>Vegetarian/Vegan</p>
-				 <p>129/4 Vo Van Tan (Vo Van Tan - Ba Huyen Thanh Quan), Ho Chi Minh City</p>
+				 <p>{{service.house_number}}, {{service.street}}, {{service.ward}}, {{service.district}}, {{service.province}}</p>
 				 <button type="button" class="btn btn-default">
 	 		      <span class="glyphicon glyphicon glyphicon-bookmark"></span> Save
 	 		    </button>
@@ -65,45 +66,7 @@
 		 </div>
 			</div>
 	  </div>
-
-		<div class="panel panel-info">
-	    <div class="panel-heading"><a href="#/details">2. Prime Bistro</a></div>
-	    <div class="panel-body">
-				<div class="media">
-			 <div class="media-left">
-				 <img src="https://irs2.4sqi.net/img/general/width960/23190714_sASU8c9SOXW-H08tN5VRWGv1J62_CCo9YaTMBu3FC5Q.jpg" class="media-object" style="width:auto; height: 120px;;">
-			 </div>
-			 <div class="media-body">
-				 <p>Vegetarian/Vegan</p>
-				 <p>129/4 Vo Van Tan (Vo Van Tan - Ba Huyen Thanh Quan), Ho Chi Minh City</p>
-				 <button type="button" class="btn btn-default">
-	 		      <span class="glyphicon glyphicon glyphicon-bookmark"></span> Save
-	 		    </button>
-			 </div>
-			 <p>Great menu with both Vietnamese and Western vegetarian dishes.</p>
-		 </div>
-			</div>
-	  </div>
-
-		<div class="panel panel-info">
-	    <div class="panel-heading"><a href="#/details">3. Prime Bistro</a></div>
-	    <div class="panel-body">
-				<div class="media">
-			 <div class="media-left">
-				 <img src="https://irs2.4sqi.net/img/general/width960/23190714_sASU8c9SOXW-H08tN5VRWGv1J62_CCo9YaTMBu3FC5Q.jpg" class="media-object" style="width:auto; height: 120px;;">
-			 </div>
-			 <div class="media-body">
-				 <p>Vegetarian/Vegan</p>
-				 <p>129/4 Vo Van Tan (Vo Van Tan - Ba Huyen Thanh Quan), Ho Chi Minh City</p>
-				 <button type="button" class="btn btn-default">
-	 		      <span class="glyphicon glyphicon glyphicon-bookmark"></span> Save
-	 		    </button>
-			 </div>
-			 <p>Great menu with both Vietnamese and Western vegetarian dishes.</p>
-		 </div>
-			</div>
-	  </div>
-
+</div>
 		</div>
 		<nav class="col-md-6">
       <div class="nav nav-pills nav-stacked" data-spy="affix">

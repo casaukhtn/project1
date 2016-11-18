@@ -88,4 +88,23 @@ myApp.controller('Abc', function($scope){
 	$scope.search = function(){
 		window.location.hash = "#/search";
 	};
+
+	//tim kiem loai dịch vu food
+	$scope.search_food = function(){
+		// lấy danh sách các dịch vụ theo loại dịch vụ
+		$.post('index.php?c=find&a=getlistdatabytype', {ln: ['id_service_type'], lv: ['1']}, function(data, textStatus, xhr) {
+			json = $.parseJSON(data);
+			$scope.services = json.data;
+		});
+		window.location.hash = "#/search";
+	};
+	//tim kiem loai dịch vu coffee
+	$scope.search_coffee = function(){
+		// lấy danh sách các dịch vụ theo loại dịch vụ
+		$.post('index.php?c=find&a=getlistdatabytype', {ln: ['id_service_type'], lv: ['2']}, function(data, textStatus, xhr) {
+			json = $.parseJSON(data);
+			$scope.services = json.data;
+		});
+		window.location.hash = "#/search";
+	};
 });
