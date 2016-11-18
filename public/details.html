@@ -41,9 +41,33 @@
 			</span>
 		</div>
 	</div>
+
   </div>
 </nav>
-<div class="container" style="padding-top: 50px;">
+
+<div class="panel panel-default" style="margin-top: 50px; padding: 2px; background-color: #008000;">
+  <div class="panel-body">
+    <div class="row listfind" style="margin: 30px;">
+        <a href="#/search" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-cutlery"></span> Food
+        </a>
+        <a href="#/search" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-tint"></span> Coffee
+        </a>
+        <a href="#/search" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-glass"></span> Nightlife
+        </a>
+        <a href="#/search" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-apple"></span> Fun
+        </a>
+        <a href="#search" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping
+        </a>
+      </div>
+  </div>
+</div>
+
+<div class="container" style="padding-top: 5px;">
   <div class="row" style="margin-top: 30px;">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
@@ -76,10 +100,10 @@
       <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
     </div>-->
 
-<div class="w3-content w3-section" style="max-width:500px">
-  <img class="mySlides" src="https://irs1.4sqi.net/img/general/width960/138371741_mdop3CZroEP2r2DcfvobhpseRq25SWFuZomNWQ4wrcY.jpg" style="width:100%">
-  <img class="mySlides" src="https://irs2.4sqi.net/img/general/width960/138371741_O4zJVEv-d5OG7O3A4SU6d8wOz7k5ON6kK85-qgJBBbQ.jpg" style="width:100%">
-  <img class="mySlides" src="https://irs2.4sqi.net/img/general/width960/138371741_jC_1iu-cCKrOSGU0Qes_G1cZWJOssb-Ham2lOv1F710.jpg" style="width:100%">
+<div class="w3-content w3-section">
+  <img class="mySlides" src="https://irs0.4sqi.net/img/general/width960/4452803_bTNZlCk37xLJoSaBAxVU0xQcImrkPXUyJlSqXvfrJAA.jpg" style="height: 400px;">
+  <img class="mySlides" src="https://irs0.4sqi.net/img/general/width960/mPjdem4204dA4fdmZLn33MM2QuGh5oHVNXdLYh7jSCw.jpg" style="height: 400px;">
+  <img class="mySlides" src="https://irs0.4sqi.net/img/general/width960/vhJlmf5z2iUlk9waJgtleR23K5weVkI_K8QIW8l7d5Q.jpg" style="height: 400px;">
 </div>
 
 <script>
@@ -95,12 +119,12 @@ function carousel() {
     myIndex++;
     if (myIndex > x.length) {myIndex = 1}
     x[myIndex-1].style.display = "block";
-    setTimeout(carousel, 2000); // Change image every 2 seconds
+    setTimeout(carousel, 4000); // Change image every 2 seconds
 }
 </script>
   </div>
 
-  <div class="col-md-6" style="color: white;">
+  <div class="col-md-6" style="color: white; border-radius: 25px; background-color: #008000;">
     <div style="margin: 40px;">
     <div class="media">
       <div class="media-left">
@@ -108,6 +132,7 @@ function carousel() {
       </div>
       <div class="media-body">
         <h2 class="media-heading">Pizza 4P's</h2>
+        <img src="http://images.clipartpanda.com/pizza-cartoon-tumblr_mke1fhxaav1rk4yfyo1_500.png" alt="symbol" style="float:right;width:200px;height:auto;">
         <h3>Pizza Place$$$$.</h3>
         <h3>Ho Chi Minh City</h3>
         <button type="button" class="btn btn-default">
@@ -154,11 +179,14 @@ function carousel() {
 <div class="row">
   <div class="container">
   <h2>About</h2>
+
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#details#home">Photos <span class="label label-primary">101</span></a></li>
     <li><a data-toggle="tab" href="#details#menu1">Tips <span class="label label-primary">102</span</a></li>
   </ul>
 
+<div class="row">
+  <div class="col-md-9">
   <div class="tab-content" style="margin: 30px;">
     <div id="home" class="tab-pane fade in active">
       <div class="row" style="margin: 30px;">
@@ -228,6 +256,43 @@ function carousel() {
       <div class="desc" style="background-color: #0018A8; color: white;">Add a description of the image here</div>
     </div>
   </div>
+
+  <div class="responsive">
+    <div class="img">
+      <a target="_blank" href="http://www.w3schools.com/css/img_forest.jpg">
+        <img src="http://www.w3schools.com/css/img_forest.jpg" alt="Forest" width="600" height="400">
+      </a>
+      <div class="desc" style="background-color: #0018A8; color: white;">Add a description of the image here</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="img">
+      <a target="_blank" href="http://www.w3schools.com/css/img_forest.jpg">
+        <img src="http://www.w3schools.com/css/img_forest.jpg" alt="Forest" width="600" height="400">
+      </a>
+      <div class="desc" style="background-color: #0018A8; color: white;">Add a description of the image here</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="img">
+      <a target="_blank" href="http://www.w3schools.com/css/img_forest.jpg">
+        <img src="http://www.w3schools.com/css/img_forest.jpg" alt="Forest" width="600" height="400">
+      </a>
+      <div class="desc" style="background-color: #0018A8; color: white;">Add a description of the image here</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="img">
+      <a target="_blank" href="http://www.w3schools.com/css/img_forest.jpg">
+        <img src="http://www.w3schools.com/css/img_forest.jpg" alt="Forest" width="600" height="400">
+      </a>
+      <div class="desc" style="background-color: #0018A8; color: white;">Add a description of the image here</div>
+    </div>
+  </div>
+
 
     </div>
     <div id="menu1" class="tab-pane fade ">
@@ -299,7 +364,7 @@ function carousel() {
           </div>
           </div>
        </div>
-       <div class="panel-body">Filter: <code>massage</code><code>spa</code><code>spacious</code><code>ms thuy</code><code>quiet</code><code>(12 more)</code></div>
+       <div class="panel-body">Filter: <code>massage</code> <code>spa</code> <code>spacious</code> <code>ms thuy</code> <code>quiet</code> <code>(12 more)</code></div>
    </div>
    <div class="panel panel-default" style="padding: 10px;">
      <div class="media">
@@ -370,7 +435,91 @@ function carousel() {
    </div>
   </div>
     </div>
+  </div>
+  <div class="col-md-3" style="margin-top: 30px;">
+    <div class="panel panel-default" style="padding: 10px;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26081603.294420466!2d-95.677068!3d37.06250000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1477934488875" width="240" height="180" frameborder="0" style="border:0" allowfullscreen></iframe>
 
+        <div class="media">
+             <div class="media-left">
+               <span class="glyphicon glyphicon-home"></span>
+             </div>
+             <div class="media-body">
+               <h4 class="media-heading">Pizza 4P's</h4>
+               <p>133 Bui Vien (Pham Ngu Lao)<br>
+                    Ho Chi Minh City<br>
+                    Ho Chi Minh City<br>
+              </p>
+             </div>
+           </div>
+           <hr>
+
+           <div class="media">
+                <div class="media-left">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                </div>
+                <div class="media-body">
+                  <p>
+                  Welcome to the AAA Spa, open from 9 to 23:30 everyday. Our address...
+                 </p>
+                </div>
+              </div>
+              <hr>
+
+              <div class="media">
+                   <div class="media-left">
+                     <span class="glyphicon glyphicon-dashboard"></span>
+                   </div>
+                   <div class="media-body">
+                     <p class="text-danger">
+                     Closed until 9:00 AM tomorrow
+                    </p>
+                   </div>
+                 </div>
+                 <hr>
+
+                 <div class="media">
+                      <div class="media-left">
+                        <span class="glyphicon glyphicon-earphone"></span>
+                      </div>
+                      <div class="media-body">
+                        <p >
+                        08 3838 5428
+                       </p>
+                      </div>
+                    </div>
+                    <hr>
+
+                    <div class="media">
+                         <div class="media-left">
+                           <span class="glyphicon glyphicon-globe"></span>
+                         </div>
+                         <div class="media-body">
+                           <a href="http://pizza4ps.com/">http://pizza4ps.com/</a>
+                         </div>
+                       </div>
+                       <hr>
+
+                       <div class="media">
+                            <div class="media-left">
+                              <span>reservation</span>
+                            </div>
+                            <div class="media-body">
+                            <p>yes</p>
+                            </div>
+                      </div>
+
+                      <div class="media">
+                           <div class="media-left">
+                             <p>credit card</p>
+                           </div>
+                           <div class="media-body">
+                           <p>yes</p>
+                           </div>
+                     </div>
+
+  </div>
+</div>
     </div>
   </div>
 </div>
