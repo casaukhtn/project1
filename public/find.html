@@ -49,16 +49,9 @@
 		<h1>9FINDER</h1>
 			<i>Find the best places to eat, drink, shop, or visit in Ho Chi Minh City</i>
 			<form class="form-inline">
-			<input type="text" class="form-control" size="50" placeholder="I'm looking for..." required list="itemList">
-      <datalist id="itemList">
-        <option value="Top picks">
-        <option value="Trending">
-        <option value="Food">
-        <option value="Coffee">
-        <option value="Nightlife">
-        <option value="Fun">
-        <option value="Shopping">
-        <option value="Breakfast">
+			<input type="text" class="form-control" size="50" id="chosen" placeholder="I'm looking for..." required list="itemList">
+      <datalist id="itemList" ng-repeat="obj in listtypeservice">
+        <option ng-value="{{obj.name}}">
     </datalist>
 			<input type="text" class="form-control" size="30" value="Ho Chi Minh City" ="I'm looking for..." required>
 			<button type="button" class="btn btn-danger" ng-click="search()">
@@ -184,6 +177,4 @@
     </div>
   </div>
   <script type="text/javascript">
-
-
   </script>

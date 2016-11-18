@@ -8,6 +8,8 @@
 			if (isset($PAGES[$page])) {
 				require_once PATH_PAGE.$PAGES[$page];
 			}
+		} else {
+			require_once PATH_PAGE.$PAGES['default'];;
 		}
 	}
  ?>

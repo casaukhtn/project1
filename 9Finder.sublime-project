@@ -1,0 +1,36 @@
+{
+	"folders":
+	[
+		{
+			"path": "D:\\Xampp\\htdocs\\parttime"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "D:\\Xampp\\htdocs\\wordpress"
+		},
+		{
+			"path": "D:\\Xampp\\htdocs\\wordpress2"
+		},
+		{
+			"path": "D:\\Xampp\\htdocs\\transera"
+		},
+		{
+			"path": "D:\\Xampp\\htdocs\\login"
+		},
+		{
+			"path": "D:\\Xampp\\htdocs\\cus-wordpress"
+		},
+		{
+			"path": "D:\\Software\\nodejs\\myapp"
+		}
+	],
+	"settings":
+	{
+		"xdebug":
+		{
+			"url": "http://localhost:8080/9Finder/"
+		}
+	}
+}

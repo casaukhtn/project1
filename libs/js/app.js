@@ -31,9 +31,18 @@ myApp.controller('Abc', function($scope){
 			$scope.account = {username:username, token: token};
 		}
 	};
-
 	$scope.loadaccount();
+	$scope.listtypeservice = [];
+	$scope.getlisttypeservice = function () {
+		$.get('index.php?c=find&a=getlisttypeservice', function(data) {
+			json = $.parseJSON(data);
+			$scope.listtypeservice = json.data;
+		});
+	}
 
+	$scope.getlisttypeservice();
+
+	adata = $scope.listtypeservice;
 	$scope.login = function(){
 		var username = $('#username').val();
 		var password = $('#password').val();

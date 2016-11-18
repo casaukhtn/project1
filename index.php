@@ -11,7 +11,7 @@
 	require_once PATH_SYSTEM."constant.php";
 	require_once PATH_MODEL."helper.php";
 	require_once PATH_MODEL."account_helper.php";
-	
+
 	// điều hướng
 	if (isset($_REQUEST['c']) && isset($_REQUEST['a'])) {
 		$c = $_REQUEST['c'];
@@ -40,6 +40,7 @@
 		$ctl = new controller();
 		$ctl->load($c, $a, $p);
 	}else {
+		echo "string";
 		require_once "router/user.php";
 	}
  ?>
