@@ -40,7 +40,6 @@
 		$ctl = new controller();
 		$ctl->load($c, $a, $p);
 	}else {
-		echo "string";
 		require_once "router/user.php";
 	}
  ?>
