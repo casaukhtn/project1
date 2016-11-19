@@ -42,7 +42,6 @@
 	</div>
 </nav>
 
-
 	<div class="jumbotron text-center" style="background-color: rgb(67, 205, 128)">
 		<div class="container">
 		<h1>9FINDER</h1>
@@ -50,7 +49,7 @@
 			<form class="form-inline">
 			<input type="text" class="form-control" size="50" id="chosen" placeholder="I'm looking for..." required list="itemList">
       <datalist id="itemList">
-        <option ng-repeat="obj in listtypeservice" value="{{obj.name}}">
+        <option ng-repeat="obj in listtypeservice" value="{{obj.name}}"/>
     </datalist>
 			<input type="text" class="form-control" size="30" value="Ho Chi Minh City" ="I'm looking for..." required>
 			<button type="button" class="btn btn-danger" ng-click="search()">

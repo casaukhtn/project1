@@ -41,11 +41,17 @@ myApp.controller('Abc', function($scope){
 		}
 	};
 
+
 	$scope.listtypeservice = [];
 	$scope.getlisttypeservice = function () {
 		$.get('index.php?c=find&a=getlisttypeservice', function(data) {
 			json = $.parseJSON(data);
-			$scope.listtypeservice = json.data;
+			var data = json.data;
+			for (var i = 0; i < data.length; i++) {
+				var obj = data[i];
+				data[obj.name] = [obj.name, obj.id_service_type];
+			}
+			$scope.listtypeservice = data;
 		});
 	}
 
@@ -95,7 +101,17 @@ myApp.controller('Abc', function($scope){
 	}
 
 	$scope.search = function(){
-		window.location.hash = "#/search";
+		var listtypeservice = $scope.listtypeservice;
+		var _name_type_service = $('#chosen').val();
+		if (listtypeservice[_name_type_service]) {
+			var _id_type_service = listtypeservice[_name_type_service][1];
+			$.post('index.php?c=find&a=getlistdatabytype', {ln: ['id_service_type'], lv: [_id_type_service]}, function(data, textStatus, xhr) {
+				json = $.parseJSON(data);
+				$scope.services = json.data;
+			});
+
+			window.location.hash = "#/search";
+		}
 	};
 
 	$scope.service_food = function(){
