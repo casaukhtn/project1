@@ -133,4 +133,29 @@ myApp.controller('Abc', function($scope){
 		});
 		window.location.hash = "#/search";
 	};
+
+	var service_id;
+	$scope.details = function(){
+		service_id = $('#service_id').val();
+		// lấy tất cả comment của dịch vụ
+		$.get('index.php?c=comment&a=getallcomment&ln=service_code&lv=' + service_id.toString(), function(data) {
+			json = $.parseJSON(data);
+			$scope.comments = json.data;
+		});
+		window.location.hash = "#/details";
+	};
+
+	$scope.comment = function(){
+		var comment = $('#comment').val();
+		console.log(service_id);
+		$.post('index.php?c=comment&a=addcomment', {ln: ['service_code', 'content'], lv: [service_id, comment]}, function(data, textStatus, xhr) {
+			json = $.parseJSON(data);
+		});
+		$.get('index.php?c=comment&a=getallcomment&ln=service_code&lv=' + service_id.toString(), function(data) {
+			json = $.parseJSON(data);
+			console.log(json.data);
+			$scope.comments = json.data;
+		});
+		window.location.hash = "#/details";
+	};
 });

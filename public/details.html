@@ -373,65 +373,32 @@ function carousel() {
           </div>
           <div class="media-body">
               <textarea class="form-control" rows="5" id="comment" placeholder="Leave a tip for others..."></textarea>
-              <input type="submit" class="btn btn-info" value="Post" style="margin-top: 10px;"></input>
+              <input type="submit" class="btn btn-info" value="Post" style="margin-top: 10px;" ng-click="comment()"></input>
               <button type="button" class="btn btn-danger right" style="margin-top: 10px;"  data-toggle="tooltip" data-placement="bottom" title="Add a photo">
                 <span class="glyphicon glyphicon-camera"></span>
               </button>
-              <script>
+              <!-- <script>
                 $(document).ready(function(){
                     $('[data-toggle="tooltip"]').tooltip();
                 });
-              </script>
+              </script> -->
           </div>
         </div>
    </div>
 
-   <div class="panel panel-default" style="padding: 10px;">
+   <div class="panel panel-default" style="padding: 10px;" ng-repeat="comment in comments">
 
      <div class="media">
           <div class="media-left">
             <img src="http://www.w3schools.com/bootstrap/img_avatar1.png" class="media-object" style="width:45px">
           </div>
           <div class="media-body">
-            <h4 class="media-heading">John Doe<small><i>Posted on February 19, 2016</i></small></h4>
+            <h4 class="media-heading">{{comment.comment_by}}<small><i>Posted on February 19, 2016 chua co du lieu</i></small></h4>
             <span class="glyphicon glyphicon-remove" style="float: right;"></span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>{{comment.content}}</p>
           </div>
         </div>
         <hr>
-        <div class="media">
-             <div class="media-left">
-               <img src="http://www.w3schools.com/bootstrap/img_avatar1.png" class="media-object" style="width:45px">
-             </div>
-             <div class="media-body">
-               <h4 class="media-heading">John Doe <small><i>Posted on February 19, 2016</i></small></h4>
-               <span class="glyphicon glyphicon-remove" style="float: right;"></span>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-             </div>
-           </div>
-           <hr>
-         <div class="media">
-              <div class="media-left">
-                <img src="http://www.w3schools.com/bootstrap/img_avatar1.png" class="media-object" style="width:45px">
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">John Doe <small><i>Posted on February 19, 2016</i></small></h4>
-                <span class="glyphicon glyphicon-remove" style="float: right;"></span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-            </div>
-            <hr>
-          <div class="media">
-               <div class="media-left">
-                 <img src="http://www.w3schools.com/bootstrap/img_avatar1.png" class="media-object" style="width:45px">
-               </div>
-               <div class="media-body">
-                 <h4 class="media-heading">John Doe <small><i>Posted on February 19, 2016</i></small></h4>
-                 <span class="glyphicon glyphicon-remove" style="float: right;"></span>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-               </div>
-             </div>
-             <hr>
    </div>
   </div>
     </div>
