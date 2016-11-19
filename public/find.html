@@ -9,7 +9,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">9Finder</a>
+				<a class="navbar-brand" href="#/">9Finder</a>
 			</div>
 			<div class="col-md-2 col-md-offset-3">
 				<!-- đã login -->
@@ -50,27 +50,27 @@
 			<i>Find the best places to eat, drink, shop, or visit in Ho Chi Minh City</i>
 			<form class="form-inline">
 			<input type="text" class="form-control" size="50" id="chosen" placeholder="I'm looking for..." required list="itemList">
-      <datalist id="itemList" ng-repeat="obj in listtypeservice">
-        <option ng-value="{{obj.name}}">
+      <datalist id="itemList">
+        <option ng-repeat="obj in listtypeservice" value="{{obj.name}}">
     </datalist>
 			<input type="text" class="form-control" size="30" value="Ho Chi Minh City" ="I'm looking for..." required>
 			<button type="button" class="btn btn-danger" ng-click="search()">
 		      <span class="glyphicon glyphicon-search"></span> Search
 		    </button>
 			<div class="row listfind" style="margin: 30px;">
-			    <a href="#/search" class="btn btn-info btn-lg">
+			    <a class="btn btn-info btn-lg" ng-click="service_food()">
 			      <span class="glyphicon glyphicon-cutlery"></span> Food
 			    </a>
-			    <a href="#/search" class="btn btn-info btn-lg">
+			    <a class="btn btn-info btn-lg" ng-click="service_coffee()">
 			      <span class="glyphicon glyphicon-tint"></span> Coffee
 			    </a>
-			    <a href="#/search" class="btn btn-info btn-lg">
+			    <a class="btn btn-info btn-lg" ng-click="service_nightlife()">
 			      <span class="glyphicon glyphicon-glass"></span> Nightlife
 			    </a>
-			    <a href="#/search" class="btn btn-info btn-lg">
+			    <a class="btn btn-info btn-lg" ng-click="service_fun()">
 			      <span class="glyphicon glyphicon-apple"></span> Fun
 			    </a>
-			    <a href="#search" class="btn btn-info btn-lg">
+			    <a class="btn btn-info btn-lg" ng-click="service_shopping()">
 			      <span class="glyphicon glyphicon-shopping-cart"></span> Shopping
 			    </a>
 		    </div>

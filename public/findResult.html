@@ -44,71 +44,33 @@
   </div>
 </nav>
 <div class="container" style="padding-top: 50px;">
-  <div class="row" style="margin-top: 30px;">
+	<div class="row" style="margin-top: 30px;">
 		<div class="col-md-6">
-
-		<div class="panel panel-info">
-	    <div class="panel-heading"><a href="#/details">1. Prime Bistro</a></div>
-	    <div class="panel-body">
-				<div class="media">
-			 <div class="media-left">
-				 <img src="https://irs2.4sqi.net/img/general/width960/23190714_sASU8c9SOXW-H08tN5VRWGv1J62_CCo9YaTMBu3FC5Q.jpg" class="media-object" style="width:auto; height: 120px;;">
-			 </div>
-			 <div class="media-body">
-				 <p>Vegetarian/Vegan</p>
-				 <p>129/4 Vo Van Tan (Vo Van Tan - Ba Huyen Thanh Quan), Ho Chi Minh City</p>
-				 <button type="button" class="btn btn-default">
-	 		      <span class="glyphicon glyphicon glyphicon-bookmark"></span> Save
-	 		    </button>
-			 </div>
-			 <p>Great menu with both Vietnamese and Western vegetarian dishes.</p>
-		 </div>
+			
+			<div class="panel panel-info" ng-repeat="service in services">
+				<div class="panel-heading"><a href="#/details">{{service.name}}</a></div>
+				<div class="panel-body">
+					<div class="media">
+						<div class="media-left">
+							<img src="https://irs2.4sqi.net/img/general/width960/23190714_sASU8c9SOXW-H08tN5VRWGv1J62_CCo9YaTMBu3FC5Q.jpg" class="media-object" style="width:auto; height: 120px;;">
+						</div>
+						<div class="media-body">
+							<p>Vegetarian/Vegan</p>
+							<p>{{service.house_number}}, {{service.street}}, {{service.ward}}, {{service.district}}, {{service.province}} </p>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon glyphicon-bookmark"></span> Save
+							</button>
+						</div>
+						<p>Great menu with both Vietnamese and Western vegetarian dishes.</p>
+					</div>
+				</div>
 			</div>
-	  </div>
-
-		<div class="panel panel-info">
-	    <div class="panel-heading"><a href="#/details">2. Prime Bistro</a></div>
-	    <div class="panel-body">
-				<div class="media">
-			 <div class="media-left">
-				 <img src="https://irs2.4sqi.net/img/general/width960/23190714_sASU8c9SOXW-H08tN5VRWGv1J62_CCo9YaTMBu3FC5Q.jpg" class="media-object" style="width:auto; height: 120px;;">
-			 </div>
-			 <div class="media-body">
-				 <p>Vegetarian/Vegan</p>
-				 <p>129/4 Vo Van Tan (Vo Van Tan - Ba Huyen Thanh Quan), Ho Chi Minh City</p>
-				 <button type="button" class="btn btn-default">
-	 		      <span class="glyphicon glyphicon glyphicon-bookmark"></span> Save
-	 		    </button>
-			 </div>
-			 <p>Great menu with both Vietnamese and Western vegetarian dishes.</p>
-		 </div>
-			</div>
-	  </div>
-
-		<div class="panel panel-info">
-	    <div class="panel-heading"><a href="#/details">3. Prime Bistro</a></div>
-	    <div class="panel-body">
-				<div class="media">
-			 <div class="media-left">
-				 <img src="https://irs2.4sqi.net/img/general/width960/23190714_sASU8c9SOXW-H08tN5VRWGv1J62_CCo9YaTMBu3FC5Q.jpg" class="media-object" style="width:auto; height: 120px;;">
-			 </div>
-			 <div class="media-body">
-				 <p>Vegetarian/Vegan</p>
-				 <p>129/4 Vo Van Tan (Vo Van Tan - Ba Huyen Thanh Quan), Ho Chi Minh City</p>
-				 <button type="button" class="btn btn-default">
-	 		      <span class="glyphicon glyphicon glyphicon-bookmark"></span> Save
-	 		    </button>
-			 </div>
-			 <p>Great menu with both Vietnamese and Western vegetarian dishes.</p>
-		 </div>
-			</div>
-	  </div>
-
 		</div>
+		
 		<nav class="col-md-6">
-      <div class="nav nav-pills nav-stacked" data-spy="affix">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26081603.294420466!2d-95.677068!3d37.06250000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1477934488875" width="600" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
-		</div>
-    </nav>
-  </div>
+			<div class="nav nav-pills nav-stacked" data-spy="affix">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26081603.294420466!2d-95.677068!3d37.06250000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1477934488875" width="600" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+		</nav>
+	</div>
 </div>

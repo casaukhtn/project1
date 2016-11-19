@@ -88,4 +88,49 @@ myApp.controller('Abc', function($scope){
 	$scope.search = function(){
 		window.location.hash = "#/search";
 	};
+
+	$scope.service_food = function(){
+		// lấy danh sách các dịch vụ theo loại dịch vụ
+		$.post('index.php?c=find&a=getlistdatabytype', {ln: ['id_service_type'], lv: ['1']}, function(data, textStatus, xhr) {
+			json = $.parseJSON(data);
+			$scope.services = json.data;
+		});
+		window.location.hash = "#/search";
+	};
+
+	$scope.service_coffee = function(){
+		// lấy danh sách các dịch vụ theo loại dịch vụ
+		$.post('index.php?c=find&a=getlistdatabytype', {ln: ['id_service_type'], lv: ['2']}, function(data, textStatus, xhr) {
+			json = $.parseJSON(data);
+			$scope.services = json.data;
+		});
+		window.location.hash = "#/search";
+	};
+
+	$scope.service_nightlife = function(){
+		// lấy danh sách các dịch vụ theo loại dịch vụ
+		$.post('index.php?c=find&a=getlistdatabytype', {ln: ['id_service_type'], lv: ['2']}, function(data, textStatus, xhr) {
+			json = $.parseJSON(data);
+			$scope.services = json.data;
+		});
+		window.location.hash = "#/search";
+	};
+
+	$scope.service_fun = function(){
+		// lấy danh sách các dịch vụ theo loại dịch vụ
+		$.post('index.php?c=find&a=getlistdatabytype', {ln: ['id_service_type'], lv: ['2']}, function(data, textStatus, xhr) {
+			json = $.parseJSON(data);
+			$scope.services = json.data;
+		});
+		window.location.hash = "#/search";
+	};
+
+	$scope.service_shopping = function(){
+		// lấy danh sách các dịch vụ theo loại dịch vụ
+		$.post('index.php?c=find&a=getlistdatabytype', {ln: ['id_service_type'], lv: ['2']}, function(data, textStatus, xhr) {
+			json = $.parseJSON(data);
+			$scope.services = json.data;
+		});
+		window.location.hash = "#/search";
+	};
 });
