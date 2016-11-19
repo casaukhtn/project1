@@ -32,6 +32,15 @@ myApp.controller('Abc', function($scope){
 		}
 	};
 	$scope.loadaccount();
+
+	// show popup login, register 
+	$scope.hidepopup = function(arr) {
+		for (var i = 0; i < arr.length; i++) {
+			p = arr[i];
+			$(p).modal('hide');
+		}
+	};
+
 	$scope.listtypeservice = [];
 	$scope.getlisttypeservice = function () {
 		$.get('index.php?c=find&a=getlisttypeservice', function(data) {
