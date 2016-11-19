@@ -35,6 +35,7 @@ body {
 .navbar-nav li a:hover, .navbar-nav li.active a {
     color: #4CAF50 !important;
     background-color: #fff !important;
+    font-weight: bold;
 }
 
 .navbar-default .navbar-toggle {
