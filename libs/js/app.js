@@ -135,8 +135,9 @@ myApp.controller('Abc', function($scope){
 	};
 
 	var service_id;
-	$scope.details = function(){
-		service_id = $('#service_id').val();
+	$scope.details = function(e){
+		//service_id = $('#service_id').val();
+        service_id = $(e.currentTarget).attr("abc");
 		// lấy tất cả comment của dịch vụ
 		$.get('index.php?c=comment&a=getallcomment&ln=service_code&lv=' + service_id.toString(), function(data) {
 			json = $.parseJSON(data);
