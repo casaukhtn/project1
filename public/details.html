@@ -11,16 +11,9 @@
     </div>
 		<div class="collapse navbar-collapse" id="myNavbar">
     <div class="col-md-3">
-			<input type="text" class="form-control" size="30" placeholder="I'm looking for..." required list="itemList" style="margin: 10px;">
+			<input type="text" class="form-control" id="chosen" ng-model="service_name" ng-change="choose_service_detail()" size="30" placeholder="I'm looking for..." required list="itemList" style="margin: 10px;">
 			<datalist id="itemList">
-				<option value="Top picks">
-				<option value="Trending">
-				<option value="Food">
-				<option value="Coffee">
-				<option value="Nightlife">
-				<option value="Fun">
-				<option value="Shopping">
-				<option value="Breakfast">
+				<option ng-repeat="obj in listtypeservice" value="{{obj.name}}">
 		</datalist>
 		</div>
 		<div class="col-md-3">
@@ -48,19 +41,19 @@
 <div class="panel panel-default" style="margin-top: 50px; padding: 2px; background-color: #008000;">
   <div class="panel-body">
     <div class="row listfind" style="margin: 30px;">
-        <a href="#/search" class="btn btn-info btn-lg">
+        <a class="btn btn-info btn-lg" ng-click="service_food()">
           <span class="glyphicon glyphicon-cutlery"></span> Food
         </a>
-        <a href="#/search" class="btn btn-info btn-lg">
+        <a class="btn btn-info btn-lg" ng-click="service_coffee()">
           <span class="glyphicon glyphicon-tint"></span> Coffee
         </a>
-        <a href="#/search" class="btn btn-info btn-lg">
+        <a class="btn btn-info btn-lg" ng-click="service_nightlife()">
           <span class="glyphicon glyphicon-glass"></span> Nightlife
         </a>
-        <a href="#/search" class="btn btn-info btn-lg">
+        <a class="btn btn-info btn-lg" ng-click="service_fun()">
           <span class="glyphicon glyphicon-apple"></span> Fun
         </a>
-        <a href="#search" class="btn btn-info btn-lg">
+        <a class="btn btn-info btn-lg" ng-click="service_shopping()">
           <span class="glyphicon glyphicon-shopping-cart"></span> Shopping
         </a>
       </div>
@@ -74,7 +67,7 @@
 <body>
   <div class="row">
     <div class="panel panel-primary">
-     <div class="panel-heading">Pizza 4P's</div>
+     <div class="panel-heading">{{serviceName}}</div>
      <div class="panel-body">
        <div class="media">
          <div class="media-left">
@@ -131,10 +124,10 @@ function carousel() {
         <img src="https://ss3.4sqi.net/img/categories_v2/food/pizza_88.png" class="media-object" style="width:60px">
       </div>
       <div class="media-body">
-        <h2 class="media-heading">Pizza 4P's</h2>
+        <h2 class="media-heading">{{serviceName}}</h2>
         <img src="http://images.clipartpanda.com/pizza-cartoon-tumblr_mke1fhxaav1rk4yfyo1_500.png" alt="symbol" style="float:right;width:200px;height:auto;">
         <h3>Pizza Place$$$$.</h3>
-        <h3>Ho Chi Minh City</h3>
+        <h3>{{serviceProvince}}</h3>
         <button type="button" class="btn btn-default">
            <span class="glyphicon glyphicon glyphicon-bookmark"></span> Save
          </button>

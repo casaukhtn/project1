@@ -1,54 +1,47 @@
 
 <nav class="navbar navbar-defaul navbar-fixed-top" style="background-color: #4CAF50;">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#/">Logo</a>
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#/">Logo</a>
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-      </button>
-    </div>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
-    <div class="col-md-3">
-			<input type="text" class="form-control" size="30" placeholder="I'm looking for..." required list="itemList" style="margin: 10px;">
-			<datalist id="itemList">
-				<option value="Top picks">
-				<option value="Trending">
-				<option value="Food">
-				<option value="Coffee">
-				<option value="Nightlife">
-				<option value="Fun">
-				<option value="Shopping">
-				<option value="Breakfast">
-		</datalist>
+			<div class="col-md-3">
+			<input type="text" id="chosen" ng-model="service_name" ng-change="choose_service()" class="form-control" size="30" placeholder="I'm looking for..." required list="itemList" style="margin: 10px;">
+				<datalist id="itemList">
+					<option ng-repeat="obj in listtypeservice" value="{{obj.name}}">
+					</datalist>
+				</div>
+				<div class="col-md-3">
+					<div class="input-group">
+						<input type="text" class="form-control" value ="Ho Chi Minh City" required style="margin: 10px;">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button">
+								<span class="glyphicon glyphicon-search"></span>
+							</button>
+						</span>
+					</div>
+				</div>
+				<div class="col-md-3"></div>
+				<div class="col-md-2">
+					<img src='https://freeiconshop.com/files/edd/person-flat.png' style="width: 40px; height: auto; margin: 10px;"/>
+					<span style="font-size: 15px; color: white">
+						User name
+					</span>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-3">
-			<div class="input-group">
-      <input type="text" class="form-control" value ="Ho Chi Minh City" required style="margin: 10px;">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">
-					<span class="glyphicon glyphicon-search"></span>
-				</button>
-      </span>
-    </div>
-		</div>
-		<div class="col-md-3"></div>
-		<div class="col-md-2">
-			<img src='https://freeiconshop.com/files/edd/person-flat.png' style="width: 40px; height: auto; margin: 10px;"/>
-			<span style="font-size: 15px; color: white">
-				User name
-			</span>
-		</div>
-	</div>
-  </div>
-</nav>
+	</nav>
 <div class="container" style="padding-top: 50px;">
 	<div class="row" style="margin-top: 30px;">
 		<div class="col-md-6">
 
 			<div class="panel panel-info" ng-repeat="service in services">
-			<div class="panel-heading"><a ng-click="details($event)" abc="{{service.id_service}}">{{service.id_service}}. {{service.name}}</a></div>
+			<div class="panel-heading"><a ng-click="details($event)" serviceid="{{service.id_service}}" servicename="{{service.name}}" serviceprovince="{{service.province}}">{{service.id_service}}. {{service.name}}</a></div>
 				<input type="text" hidden="true" class="nhi" id="service_id" value="{{service.id_service}}">
 				<div class="panel-body">
 					<div class="media">

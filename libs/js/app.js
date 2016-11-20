@@ -18,7 +18,7 @@ myApp.config(function($routeProvider){
 	});
 });
 
-myApp.controller('Abc', function($scope){
+myApp.controller('Abc', function($scope, $route, $templateCache, $location){
 	$.get('index.php?c=find&a=getlisttypeservice', function(data) {
 		json = $.parseJSON(data);
 		$scope.dsloaidv = json.data;
@@ -43,6 +43,7 @@ myApp.controller('Abc', function($scope){
 
 
 	$scope.listtypeservice = [];
+	$scope.services = null;
 	$scope.getlisttypeservice = function () {
 		$.get('index.php?c=find&a=getlisttypeservice', function(data) {
 			json = $.parseJSON(data);
@@ -114,6 +115,40 @@ myApp.controller('Abc', function($scope){
 		}
 	};
 
+	$scope.choose_service = function(){
+		var listtypeservice = $scope.listtypeservice;
+		var _name_type_service = $('#chosen').val();
+		console.log(_name_type_service);
+		if (listtypeservice[_name_type_service]) {
+			var _id_type_service = listtypeservice[_name_type_service][1];
+			$.post('index.php?c=find&a=getlistdatabytype', {ln: ['id_service_type'], lv: [_id_type_service]}, function(data, textStatus, xhr) {
+				json = $.parseJSON(data);
+				$scope.services = json.data;
+			});
+
+			var currentPageTemplate = $route.current.templateUrl;
+			$templateCache.remove(currentPageTemplate);
+			$route.reload();
+		}else{
+			window.location.hash = "#/search";
+		}
+	};
+
+	$scope.choose_service_detail = function(){
+		console.log("zo");
+		var listtypeservice = $scope.listtypeservice;
+		var _name_type_service = $('#chosen').val();
+		console.log(_name_type_service);
+		if (listtypeservice[_name_type_service]) {
+			var _id_type_service = listtypeservice[_name_type_service][1];
+			$.post('index.php?c=find&a=getlistdatabytype', {ln: ['id_service_type'], lv: [_id_type_service]}, function(data, textStatus, xhr) {
+				json = $.parseJSON(data);
+				$scope.services = json.data;
+			});
+			window.location.hash = "#/search";
+		}
+	};
+
 	$scope.service_food = function(){
 		// lấy danh sách các dịch vụ theo loại dịch vụ
 		$.post('index.php?c=find&a=getlistdatabytype', {ln: ['id_service_type'], lv: ['1']}, function(data, textStatus, xhr) {
@@ -162,7 +197,9 @@ myApp.controller('Abc', function($scope){
 	var service_id;
 	$scope.details = function(e){
 		//service_id = $('#service_id').val();
-        service_id = $(e.currentTarget).attr("abc");
+        service_id = $(e.currentTarget).attr("serviceid");
+        $scope.serviceName = $(e.currentTarget).attr("servicename");
+        $scope.serviceProvince = $(e.currentTarget).attr("serviceprovince");
 		// lấy tất cả comment của dịch vụ
 		$.get('index.php?c=comment&a=getallcomment&ln=service_code&lv=' + service_id.toString(), function(data) {
 			json = $.parseJSON(data);
