@@ -31,12 +31,12 @@ $.post('index.php?c=find&a=getlistdatabytype', {ln: ['id_service_type'], lv: ['1
 	console.log(json);
 });
 
+
 // lấy tất cả comment của dịch vụ
 $.get('index.php?c=comment&a=getallcomment&ln=service_code&lv=1', function(data) {
 	json = $.parseJSON(data);
 	console.log(json);
 });
-
 // kiểm tra quyền thao tác với 1 một comment 
 // 1: ...
 // 0: không có quyền
@@ -77,6 +77,15 @@ $.get('index.php?c=rating&a=get_rating_medium&ln=service_code&lv=1', function(da
 });
 
 // update website, price, phone của service. Chỉ admin mới sử dụng dc
+
+// load tất cả ảnh của dịch vụ
+// trả về mãng link hình ảnh
+$.get('index.php?c=service&a=load_album&ln=id_service&lv=1', function(data) {
+	json = $.parseJSON(data);
+	console.log(json);
+});
+
+
 $.post('index.php?c=service&a=update_website', {ln: ['id_service', 'website'], lv: ['1', 'http://www.google.com']}, function(data, textStatus, xhr) {
 	json = $.parseJSON(data);
 	console.log(json);

@@ -10,6 +10,19 @@
 
 	class service_controller extends controller
 	{
+		function load_album() {
+			if (isset($this->parameters['id_service'])) {
+				$id_service = $this->parameters['id_service'];
+				$model = new service();
+
+				$arr = $model->loadallimagebyidserver($id_service);
+				if (count($arr) > 0) {
+					$this->data = $arr;
+					return 1;
+				}
+				return 0;
+			} 
+		}
 
 		function update_website() {
 			if (account_admin()) {
