@@ -205,20 +205,57 @@ myApp.controller('Abc', function($scope, $route, $templateCache, $location){
 			json = $.parseJSON(data);
 			$scope.comments = json.data;
 		});
+		// lấy rating cho 1 địa điểm
+		$.get('index.php?c=rating&a=get_rating_medium&ln=service_code&lv=1', function(data, textStatus, xhr) {
+			json = $.parseJSON(data);
+			console.log(json);
+			$scope.rating = json.data;
+		});
+		// trả về mãng link hình ảnh
+		$.get('index.php?c=service&a=load_album&ln=id_service&lv=' + service_id.toString(), function(data) {
+			json = $.parseJSON(data);
+			$scope.photos = json.data;
+			console.log(json.data);
+		});
 		window.location.hash = "#/details";
 	};
 
 	$scope.comment = function(){
 		var comment = $('#comment').val();
 		console.log(service_id);
+		//add comment
 		$.post('index.php?c=comment&a=addcomment', {ln: ['service_code', 'content'], lv: [service_id, comment]}, function(data, textStatus, xhr) {
 			json = $.parseJSON(data);
 		});
+		//load lai danh sach comment
 		$.get('index.php?c=comment&a=getallcomment&ln=service_code&lv=' + service_id.toString(), function(data) {
 			json = $.parseJSON(data);
 			console.log(json.data);
 			$scope.comments = json.data;
 		});
-		window.location.hash = "#/details";
+		//window.location.hash = "#/details";
+		var currentPageTemplate = $route.current.templateUrl;
+			$templateCache.remove(currentPageTemplate);
+			$route.reload();
+	};
+
+	$scope.remove_comment = function(e){
+		var id_comment = $(e.currentTarget).attr("idcomment");
+		//xoa comment
+		$.post('index.php?c=comment&a=delcomment', {ln: 'id_comment', lv: id_comment}, function(data, textStatus, xhr) {
+			json = $.parseJSON(data);
+			console.log(json);
+		});
+		//load lai trang
+		//load lai danh sach comment
+		$.get('index.php?c=comment&a=getallcomment&ln=service_code&lv=' + service_id.toString(), function(data) {
+			json = $.parseJSON(data);
+			console.log(json.data);
+			$scope.comments = json.data;
+		});
+		//window.location.hash = "#/details";
+		var currentPageTemplate = $route.current.templateUrl;
+		$templateCache.remove(currentPageTemplate);
+		$route.reload();
 	};
 });

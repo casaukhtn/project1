@@ -135,7 +135,7 @@ function carousel() {
          <button type="button" class="btn btn-default">
             <span class="glyphicon glyphicon-share"></span> Share
           </button>
-          <h4>Rating <span class="label label-primary">9.4/10</span></h4>
+          <h4>Rating <span class="label label-primary">{{rating.scroce}}</span></h4>
           <br>
 
           <div class="rating" style="margin-top: 50px;">
@@ -387,7 +387,7 @@ function carousel() {
           </div>
           <div class="media-body">
             <h4 class="media-heading">{{comment.comment_by}}<small><i>Posted on February 19, 2016 chua co du lieu</i></small></h4>
-            <span class="glyphicon glyphicon-remove" style="float: right;"></span>
+            <a class="glyphicon glyphicon-remove" style="float: right;" ng-click="remove_comment($event)" idcomment="{{comment.id_comment}}"></a>
             <p>{{comment.content}}</p>
           </div>
         </div>
